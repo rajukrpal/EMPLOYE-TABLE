@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/css/bootstrap-icons.css">
+      <link rel="stylesheet" href="/stylesheets/css/admin-style.css">
+      
+
+      <title>Hello, world!</title>
+   </head>
+   <body>
+      <header class="navbar navbar-expand-lg navbar-light">
+         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+         <div class="container-fluid">
+               <center> <br> <a class="btn btn-success btn-md" href="/">Add New Employe</a> </center>
+               <div class="mr-5">
+                  <ul class="navbar-nav mr-auto mr-0">
+                     <li class="nav-item">
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+           
+            <div class="col-lg-8">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1>All Employe</h1>
+
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <!-- ... (your table header) ... -->
+                <thead>
+                  <tr>
+                     <th>Photo</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Phone_No</th>
+                     <th>Date_Of_Birth</th>
+                     <th>Designation</th>
+                     <th>Gender</th>
+                     <th>Edit</th>
+                     <th>Delete</th>
+                  </tr>
+               </thead>
+                <tbody style="width: 100%;">
+                    <% data.forEach(function(item) { %>
+                        <tr>
+                           <td><img src="/upload/<%=item.profilePhoto %>" alt="Error" style="width: 100%;"> </td>
+                            <td><%= item.name %></td>
+                            <td><%= item.email %></td>
+                            <td><%= item.phone %></td>
+                            <td><%= item.dob %></td>
+                            <td><%= item.designation %></td>
+                            <td><%= item.gender %></td>
+                            <td>
+                                <a class="btn btn-primary" href="/edit-employe/<%= item._id %>">Edit</a>
+                              </td>
+                              <td>
+                                <form style="display: inline;" action="/delete-employe/<%= item._id %>?_method=DELETE" method="post">
+                                    <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            
+             </div>
+             
+            </div>
+         </div>
+      </div>
+      <script src="/javascripts/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascripts/js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/javascripts/js/datatables.min.css"/>
+      <script type="text/javascript" src="/javascripts/js/datatables.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+              rowReorder: true
+           });
+      </script>
+   </body>
+</html>

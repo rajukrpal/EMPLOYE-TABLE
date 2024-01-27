@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="stylesheet" href="/stylesheets/employe.css">
+  </head>
+
+  <body>
+    
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="/" method="post" enctype="multipart/form-data" id="myForm" >
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter your  Name">
+              <span id="nameError" class="error"></span><br>
+            </div>
+    
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email">
+              <span id="emailError" class="error"></span><br>
+
+            </div>
+    
+            <div class="form-group">
+              <label for="phone">Phone No</label>
+              <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter your Phone No">
+              <span id="phoneError" class="error"></span><br>
+
+            </div>
+    
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" class="form-control" name="dob" id="dob" placeholder="Enter your Date Of Birth">
+              <span id="dobError" class="error"></span><br>
+
+            </div>
+    
+            <div class="form-group">
+              <label for="designation">Designation</label>
+              <input type="text" class="form-control" name="designation" id="designation" placeholder="Enter your Designation">
+              <span id="designationError" class="error"></span><br>
+
+            </div>
+
+            <div class="form-group">
+              <label>Gender</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input gender" type="radio" name="gender" id="male" value="Male">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input gender" type="radio" name="gender" id="female" value="Female">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input gender" type="radio" name="gender" id="other" value="Other">
+                <label class="form-check-label" for="other">Other</label>
+              </div><br>
+              <span id="genderError" class="error"></span><br>
+            </div>
+            
+    
+            <div class="form-group">
+              <label for="profilePhoto">Profile Photo</label>
+              <input type="file" class="form-control" name="profilePhoto" id="profilePhoto" placeholder="Selete One Photo">
+              <span id="profilePhotoError" class="error"></span><br>
+
+            </div>
+    
+            <button type="submit" class="btn btn-primary" >SAVE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/add-employe.js"></script>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
+
